@@ -1,3 +1,12 @@
+/*Tables:
+Users: user_id, sex, birth_date
+user_actions: user_id, action, order_id, time
+Couriers: courier_id, sex, birth_date
+courier_actions: courier_id, action, order_id, time
+products: product_id, price, name
+orders: order_id, products_ids(array), creation_time
+*/
+
 /* Calculating daily revenue, revenue growth comparing to preceding day and revenue growth percentage */
 WITH temp_table as (SELECT date(creation_time)as date,
                            sum(order_price) as daily_revenue
